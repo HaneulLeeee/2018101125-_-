@@ -1,0 +1,73 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+.header{
+  display: flex;
+  width: 1280px;
+  margin: auto;
+  height: 86px;
+}
+
+.logo{
+margin-top: 20px
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main{
+  width: 100%;
+  height: 100%;
+}
+.btn{
+  padding: 20px 20px;
+  background-color: teal;
+  color: #fff;
+  cursor: pointer;
+}
+#checkbtn{
+  display: none;
+}
+.box{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  background: #fff;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+}
+.box .btn{
+  margin: 10px 0;
+}
+#checkbtn:checked ~ .box{
+  opacity: 1;
+  pointer-events: visible;
+  transition: all .4s;
+  transition-delay: 0.1s;
+}
+.overlay{
+  position: fixed;
+  top: 0%; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0;
+  z-index: 10;
+  transform: scale(0.5);
+  pointer-events: none;
+}
+#checkbtn:checked ~ .overlay{
+  opacity: 0.9;
+  transform: scale(1);
+  transition: all .4s;
+  pointer-events: visible;
+}
